@@ -9,7 +9,7 @@ def convertBlockTextureMapping(texturePackDirectory, outputDirectory):
     blockMapping={}
     blocks=[]
     
-    blockMapping['version']="1.0"
+    blockMapping['version']=1
 
     for name, value in mapping.items():
         block={}
@@ -47,7 +47,7 @@ def convertLayerProperties(texturePackDirectory, outputDirectory):
 
     layerMap={}
     
-    layerMap['version']="1.0"
+    layerMap['version']=1
     layers=[]
     
     for name, value in yamlLayers.items():
@@ -71,7 +71,7 @@ def convertPack(texturePackDirectory, outputDirectory):
         yamlPack=yaml.safe_load(inputFile)
 
     pack={}
-    pack['version']="1.0"
+    pack['version']=1
 
     packOptions={'name', 'resolution', 'description'}
     
@@ -90,7 +90,7 @@ def convertTextures(texturePackDirectory, outputDirectory):
         yamlTextures=yaml.safe_load(inputFile)
     
     textureMap={}
-    textureMap['version']="1.0"
+    textureMap['version']=1
 
     textures=[]
     textureOptions={'base', 'overlay', 'blendMode'}
