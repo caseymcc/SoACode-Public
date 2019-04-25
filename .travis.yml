@@ -36,20 +36,32 @@ matrix:
   include:
     # Linux {
 
-    - os: linux
-      env: >
-        TOOLCHAIN=clang-cxx17
-        PROJECT_DIR=./
+#    - os: linux
+#      env: >
+#        TOOLCHAIN=clang-cxx17
+#        PROJECT_DIR=./
 
     - os: linux
-      env: >
-        TOOLCHAIN=gcc-7-cxx17
-        PROJECT_DIR=./
+      addons:
+        sources:
+          - llvm-toolchain-trusty-6.0
+        packages:
+          - clang-6.0
+          - libstdc++6
+      env: 
+        - MATRIX_EVAL="CC=clang-6.0 && CXX=clang++-6.0"
+        - TOOLCHAIN=clang-cxx17
+        - PROJECT_DIR=./
 
-    - os: linux
-      env: >
-        TOOLCHAIN=gcc-8-cxx17
-        PROJECT_DIR=./
+#    - os: linux
+#      env: >
+#        TOOLCHAIN=gcc-7-cxx17
+#        PROJECT_DIR=./
+#
+#    - os: linux
+#      env: >
+#        TOOLCHAIN=gcc-8-cxx17
+#        PROJECT_DIR=./
 
 #can not compile glew
 #    - os: linux
@@ -81,7 +93,6 @@ matrix:
 
     # OSX {
 
-compile issues with templates
     - os: osx
       osx_image: xcode9.4
       env: >
