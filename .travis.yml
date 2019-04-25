@@ -43,13 +43,14 @@ matrix:
 
     - os: linux
       addons:
-        sources:
-          - ubuntu-toolchain-r-test
-          - llvm-toolchain-trusty-6.0
-        packages:
-          - python3-pip
-          - clang-6.0
-          - libstdc++6
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+            - llvm-toolchain-trusty-6.0
+          packages:
+            - python3-pip
+            - clang-6.0
+            - libstdc++6
       env: 
         - MATRIX_EVAL="CC=clang-6.0 && CXX=clang++-6.0"
         - TOOLCHAIN=clang-cxx17
