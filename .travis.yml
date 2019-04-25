@@ -44,8 +44,10 @@ matrix:
     - os: linux
       addons:
         sources:
+          - ubuntu-toolchain-r-test
           - llvm-toolchain-trusty-6.0
         packages:
+          - python3-pip
           - clang-6.0
           - libstdc++6
       env: 
@@ -93,17 +95,17 @@ matrix:
 
     # OSX {
 
-    - os: osx
-      osx_image: xcode9.4
-      env: >
-        TOOLCHAIN=osx-10-13-make-cxx14
-        PROJECT_DIR=./
-
-    - os: osx
-      osx_image: xcode9.4
-      env: >
-        TOOLCHAIN=osx-10-13-cxx14
-        PROJECT_DIR=./
+#    - os: osx
+#      osx_image: xcode9.4
+#      env: >
+#        TOOLCHAIN=osx-10-13-make-cxx14
+#        PROJECT_DIR=./
+#
+#    - os: osx
+#      osx_image: xcode9.4
+#      env: >
+#        TOOLCHAIN=osx-10-13-cxx14
+#        PROJECT_DIR=./
 
 #lua not packaged correctly for mac/ios
 #    - os: osx
