@@ -52,7 +52,8 @@ matrix:
             - clang-6.0
             - libstdc++6
       env: 
-        - MATRIX_EVAL="CC=clang-6.0 && CXX=clang++-6.0"
+        - CC=clang-6.0 
+        - CXX=clang++-6.0"
         - TOOLCHAIN=clang-cxx17
         - PROJECT_DIR=./
 
@@ -118,7 +119,7 @@ matrix:
     # }
 
 before_install:
-    - eval "${MATRIX_EVAL}"
+  - eval "${MATRIX_EVAL}"
     
 install:
   # Info about OS
