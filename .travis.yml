@@ -53,7 +53,7 @@ matrix:
             - libstdc++6
       env: 
         - CC=clang-6.0 
-        - CXX=clang++-6.0"
+        - CXX=clang++-6.0
         - TOOLCHAIN=clang-cxx17
         - PROJECT_DIR=./
 
